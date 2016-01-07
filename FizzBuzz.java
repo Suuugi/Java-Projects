@@ -8,27 +8,24 @@ public class FizzBuzz
 {
 	public static void main(String[] args)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int i = 1; i < 101; i++)
 		{
-			for (int i = 1; i < 101; i++)
+			if (i % 3 != 0 && i % 5 != 0)
 			{
-				if (i % 3 != 0 && i % 5 != 0)
-				{
-					System.out.print(i);
-				}
-				else
-				{
-					if (i % 3 == 0)
-					{
-						System.out.print("Fizz");
-					}
-					if (i % 5 == 0)
-					{
-						System.out.print("Buzz");
-					}
-				}
-				System.out.print(' ');
+				System.out.print(i);
 			}
+			else
+			{
+				if (i % 3 == 0)
+				{
+					System.out.print("Fizz");
+				}
+				if (i % 5 == 0)
+				{
+					System.out.print("Buzz");
+				}
+			}
+			System.out.print(' ');
 		}
 	}
 }
