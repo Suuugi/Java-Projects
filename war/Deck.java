@@ -3,18 +3,40 @@ package war;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Simulates a deck of cards. When created and built, it will have 52 cards
+ * according to the different COUNT variables.
+ */
 public class Deck
 {
+	/**
+	 * The size of a standard deck of cards.
+	 */
 	final static int DECK_COUNT = 52;
+	/**
+	 * The number of suits which correspond to the amount in the Card class.
+	 */
 	final static int SUIT_COUNT = 4;
+	/**
+	 * The number of ranks which correspond to the amount in the Card class.
+	 */
 	final static int RANK_COUNT = 13;
+	/**
+	 * Where the Cards are being stored once they are defined.
+	 */
 	private ArrayList<Card> deck;
 
+	/**
+	 * Default Deck constructor which defines the ArrayList of Cards.
+	 */
 	public Deck()
 	{
 		deck = new ArrayList<Card>();
 	}
 
+	/**
+	 * Clears the deck before populating and shuffling the 52 playing cards.
+	 */
 	public void build()
 	{
 		deck.clear();
@@ -28,23 +50,21 @@ public class Deck
 		Collections.shuffle(deck);
 	}
 
+	/**
+	 * Return a card from the deck. If the deck is empty, throw
+	 * IndexOutOfBoundsException.
+	 * 
+	 * @return a card from the deck
+	 */
 	public Card draw()
 	{
-		if (deck.isEmpty())
-		{
-			return null;
-		}
-		else
-		{
-			return deck.remove(0);
-		}
+		return deck.remove(0);
 	}
 
-	public void displayDeck()
-	{
-		System.out.println(toString());
-	}
-
+	/**
+	 * toString override to display how many cards in the deck and then proceeds
+	 * to show what cards are in the deck.
+	 */
 	@Override
 	public String toString()
 	{
@@ -57,6 +77,11 @@ public class Deck
 		return str.toString();
 	}
 
+	/**
+	 * Return the size of the deck.
+	 * 
+	 * @return the deck size
+	 */
 	public int getSize()
 	{
 		return deck.size();
